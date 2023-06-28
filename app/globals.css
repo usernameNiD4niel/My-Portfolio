@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-one-color: #EE5938;
+    --primary-two-color: #21939C;
+}
+
+body {
+    background: #212529;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+.burger-menu {
+    width: 1.8rem;
+    height: 3px;
+    background: var(--primary-one-color);
+    position: relative;
+    transition: all 300ms ease-in-out;
+}
+
+.burger-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 2.2rem;
+    height: 3px;
+    background: var(--primary-two-color);
+}
+
+.animate-burger {
+    width: 1.8rem;
+    height: 3px;
+    background: var(--primary-one-color);
+    position: relative;
+    transform: rotate(45deg);
+    transition: transform 300ms ease-in-out;
+}
+.animate-burger::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.8rem;
+    height: 3px;
+    background: var(--primary-two-color);
+    transform: rotate(80deg);
+}
