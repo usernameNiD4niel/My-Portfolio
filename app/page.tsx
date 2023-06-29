@@ -134,6 +134,13 @@ export default function Home() {
           height={220}
           className="w-full mx-5 my-2 h-auto"
         />
+        <Image
+          src="/project-two.png"
+          alt="Screenshoot of my second project"
+          width={220}
+          height={220}
+          className="w-full mx-5 my-2 h-auto"
+        />
       </section>
     </main>
   );
