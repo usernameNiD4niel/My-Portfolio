@@ -16,32 +16,23 @@ const Navbar = () => {
     console.log("test");
   };
 
-  const handleBurgerMenu = (event: MouseEvent): void => {
-    const eventTarget: any = event.target;
-
-    if (eventTarget.className === "burger-menu") {
-      setIsOpen((previous) => !previous);
-      return;
-    }
-
-    if (isOpen) {
-      setIsOpen(false);
-    }
+  const handleBurgerMenu = (): void => {
+    setIsOpen((previous) => !previous);
   };
 
   return (
     <nav
       className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-all duration-300 ease-in-out ${
         isOpen
-          ? "inset-0 flex-col justify-start bg-[#212529]"
+          ? "inset-0 flex-col justify-start bg-[#212529] opacity-[0.95]"
           : "justify-between bg-gradient-to-r from-[#212529]"
       }`}
-      onClick={(event) => handleBurgerMenu(event)}
     >
       <div
-        className={`${
-          isOpen && "w-full flex items-center justify-end relative"
+        className={`flex items-center ${
+          isOpen ? "absolute top-5 right-2" : "pt-3 pb-5 px-1 justify-center"
         }`}
+        onClick={handleBurgerMenu}
       >
         <div className={`${isOpen ? "animate-burger" : "burger-menu"}`} />
       </div>

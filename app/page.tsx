@@ -1,10 +1,67 @@
 import ActiveText from "@/components/reusable/ActiveText";
-import { CardProps } from "@/constant/helper";
-import { cardText, imagesRoute } from "@/constant/text";
+import { CardProps, ProjectProps } from "@/constant/helper";
+import { cardText, imagesRoute, recentProjects } from "@/constant/text";
 import Image from "next/image";
+import Link from "next/link";
 
 type SkillsParams = {
   url: string;
+};
+
+const DisplayProject = ({
+  alt,
+  title,
+  description,
+  image,
+  duration,
+}: ProjectProps): JSX.Element => {
+  return (
+    <>
+      <Image
+        src={image}
+        alt={alt!}
+        width={250}
+        height={250}
+        className="w-full mx-5 h-auto peer/image-proj mt-10"
+      />
+      <div className="flex flex-col gap-2 my-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-2xl font-bold">{title}</h3>
+          <div className="flex gap-2 justify-end items-center">
+            <Link href="/" className="bg-slate-50 rounded-[50%]">
+              <Image
+                src="/github-icon.svg"
+                alt="Github Icon"
+                width={30}
+                height={30}
+                className="w-10 h-auto"
+              />
+            </Link>
+            <Link href="/" className="bg-slate-50 rounded-[50%]">
+              <Image
+                src="/link.svg"
+                alt="Link Icon"
+                width={30}
+                height={30}
+                className="w-10 h-auto"
+              />
+            </Link>
+          </div>
+        </div>
+        <p className="text-sm font-thin">Duration: {duration}</p>
+        <p className="text-justify">{description}</p>
+
+        <Link href="/" target="_blank">
+          <ActiveText
+            leftText="Read"
+            rightText=" More"
+            textSize="text-sm mt-5"
+            isActive={true}
+          />
+        </Link>
+      </div>
+    </>
+  );
 };
 
 const DisplaySkills = ({ url }: SkillsParams): JSX.Element => {
@@ -127,20 +184,17 @@ export default function Home() {
           rightText=" Works"
           textSize="text-2xl font-bold text-center"
         />
-        <Image
-          src="/project-one.png"
-          alt="Screenshoot of my first project"
-          width={220}
-          height={220}
-          className="w-full mx-5 my-2 h-auto"
-        />
-        <Image
-          src="/project-two.png"
-          alt="Screenshoot of my second project"
-          width={220}
-          height={220}
-          className="w-full mx-5 my-2 h-auto"
-        />
+        <div className="group relative flex items-center justify-center flex-col">
+          {recentProjects.map((value) => (
+            <DisplayProject
+              title={value.title}
+              description={value.description}
+              duration={value.duration}
+              image={value.image}
+              key={value.image}
+            />
+          ))}
+        </div>
       </section>
     </main>
   );

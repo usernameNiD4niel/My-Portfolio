@@ -25,4 +25,12 @@ export type CardProps = {
     experience: number
     label: string
     alt: string
-}
+};
+
+export type ProjectProps = {
+    title: string
+    description: string
+    image: string
+    duration: string
+    alt?: string
+};
