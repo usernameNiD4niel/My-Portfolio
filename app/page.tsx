@@ -250,14 +250,55 @@ export default function Home() {
         />
       </section>
 
-      <section className="flex flex-col items-center my-20">
-        <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
-          CONTACT
-        </p>
-        <p className="text-2xl font-bold text-center">
-          Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span> Into{" "}
-          <span className="text-[#21939C]">Real</span>
-        </p>
+      <section className="flex items-center my-20">
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
+            CONTACT
+          </p>
+          <p className="text-2xl font-bold text-center">
+            Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span>{" "}
+            Into <span className="text-[#21939C]">Real</span>
+          </p>
+          <form className="flex flex-col">
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              placeholder="Fullname"
+            />
+            <p>I have a...</p>
+            <div className="flex gap-4">
+              <button>Question</button>
+              <button>Feedback</button>
+              <button>Work for you</button>
+            </div>
+            <textarea
+              name="message"
+              id="message"
+              cols={10}
+              rows={8}
+              required
+              placeholder="What's your message?"
+            ></textarea>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email Address"
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <Image
+            src="/telephone.png"
+            alt="Telephone picture"
+            width={450}
+            height={450}
+            className="w-60 h-auto"
+          />
+        </div>
       </section>
     </main>
   );
