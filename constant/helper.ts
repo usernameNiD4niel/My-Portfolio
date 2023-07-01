@@ -3,7 +3,7 @@ import { MouseEvent } from "react";
 export type ButtonProps = {
     text: string,
     onClick(event: MouseEvent): void,
-
+    isFullWidth?: boolean
 };
 
 export type ActiveTextProps = {

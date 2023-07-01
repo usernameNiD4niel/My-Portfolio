@@ -1,4 +1,7 @@
+"use client";
+
 import ActiveText from "@/components/reusable/ActiveText";
+import Button from "@/components/reusable/Button";
 import { CardProps, ProjectProps } from "@/constant/helper";
 import { cardText, imagesRoute, recentProjects } from "@/constant/text";
 import Image from "next/image";
@@ -26,7 +29,9 @@ const DisplayProject = ({
       />
       <div className="flex flex-col gap-2 my-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-2xl font-bold">{title}</h3>
+          <Link href="/">
+            <h3 className="text-2xl font-bold">{title}</h3>
+          </Link>
           <div className="flex gap-2 justify-end items-center">
             <Link href="/" className="bg-slate-50 rounded-[50%]">
               <Image
@@ -112,6 +117,10 @@ const HeroCard = ({
 };
 
 export default function Home() {
+  const handleHireMe = () => {
+    console.log("Connect to contact form");
+  };
+
   return (
     <main className="my-28 mx-5 flex flex-col items-center justify-center">
       <Image
@@ -195,6 +204,60 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+
+      <section className="flex flex-col items-center my-20">
+        <div className="relative flex items-center justify-center">
+          <Image
+            src="/daniel.svg"
+            alt="Daniel Rey picture"
+            width={220}
+            height={220}
+            className="w-[200px] h-[200px] rounded-[50%] absolute"
+          />
+          <Image
+            src="/opentowork.png"
+            alt="Open to work image"
+            width={300}
+            height={300}
+            className="w-[200px] h-[200px] rounded-[50%] z-10"
+          />
+        </div>
+        <p className="text-center bg-[#424141] rounded-2xl py-1 mt-3 px-4 text-xs w-fit">
+          WHO I AM
+        </p>
+        <ActiveText
+          isActive={true}
+          leftText="About"
+          rightText=" Me"
+          textSize="text-2xl font-bold text-center"
+        />
+        <p className="text-justify my-4 font-light text-sm">
+          Hi I’m Daniel have created various Web Apps and Android Apps when
+          developing these I have implemented complex algorithm and scale the
+          product according to the clients need. Additionally I have integrated
+          an API to both web and mobile app which leads me to become a better
+          developer and understand the underlying conflict. With almost 2 years
+          of experience in developing complex application I have been exposed to
+          many problems so I can guaranteed that I will fulfill my job if you
+          hire me as a developer.
+        </p>
+        <Button
+          isFullWidth={true}
+          text="Hire Me"
+          onClick={handleHireMe}
+          key="hire-me"
+        />
+      </section>
+
+      <section className="flex flex-col items-center my-20">
+        <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
+          CONTACT
+        </p>
+        <p className="text-2xl font-bold text-center">
+          Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span> Into{" "}
+          <span className="text-[#21939C]">Real</span>
+        </p>
       </section>
     </main>
   );
