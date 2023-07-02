@@ -22,7 +22,7 @@ const DisplayProject = ({
     <>
       <Image
         src={image}
-        alt={alt!}
+        alt={alt}
         width={250}
         height={250}
         className="w-full mx-5 h-auto peer/image-proj mt-10"
@@ -90,7 +90,7 @@ const HeroCard = ({
   alt,
 }: CardProps): JSX.Element => {
   return (
-    <div className="flex items-center justify-between w-full mx-8 my-2 p-3 bg-[#323435] drop-shadow-xl rounded-xl">
+    <div className="flex items-center justify-between w-full mx-8 my-2 p-3 bg-[#323435] drop-shadow-xl sm:mx-2 rounded-xl">
       <Image
         src={imageUrl}
         alt={alt}
@@ -98,7 +98,7 @@ const HeroCard = ({
         height={30}
         className="w-10 h-auto opacity-80"
       />
-      <div className="flex items-center flex-col">
+      <div className="flex items-center flex-col sm:flex-row mx-3">
         <h3 className="text-lg text-[#EE5938] font-bold">
           {experience}
           <span className="text-[#21939C]">+</span>
@@ -126,7 +126,7 @@ const SelectableButton = ({
   return (
     <button
       type="button"
-      className={`border border-[#686A6C] rounded-lg text-lg font-light p-3 my-1 hover:opacity-80 ${
+      className={`border border-[#686A6C] rounded-lg text-sm font-light p-3 my-1 hover:opacity-80 ${
         isActive
           ? "opacity-100 bg-gradient-to-l from-[#EE5938] to-[#21939C]"
           : "opacity-90"
@@ -169,7 +169,7 @@ export default function Home() {
         I design and code beautifully simple things, and I love what I do.
       </p>
 
-      <div className="flex flex-col items-center justify-center mt-20">
+      <div className="flex flex-col items-center justify-center mt-20 sm:flex-row">
         {cardText.map((value, index) => (
           <HeroCard
             alt={value.alt}
@@ -181,25 +181,27 @@ export default function Home() {
         ))}
       </div>
 
-      <section className="my-20 flex flex-col items-center justify-center">
-        <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
-          MY SKILLS
-        </p>
-        <h2 className="text-center text-2xl font-bold">
-          What Are My{" "}
-          <ActiveText
-            isActive={true}
-            leftText="Programming"
-            rightText=" Skills"
-            textSize="2xl"
-          />{" "}
-          Included?
-        </h2>
-        <p className="text-center text-sm">
-          I develop simple, intuitive and responsive user interface that helps
-          users get things done with less effort and time with those
-          technologies.
-        </p>
+      <section className="my-20 flex flex-col items-center justify-center sm:flex-row md:gap-8 md:h-[70vh]">
+        <div className="flex flex-col items-center justify-center sm:items-start">
+          <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
+            MY SKILLS
+          </p>
+          <h2 className="text-center text-2xl font-bold sm:text-start sm:text-3xl md:text-4xl">
+            What Are My{" "}
+            <ActiveText
+              isActive={true}
+              leftText="Programming"
+              rightText=" Skills"
+              textSize="2xl"
+            />{" "}
+            Included?
+          </h2>
+          <p className="text-center text-sm sm:text-start sm:max-w-md">
+            I develop simple, intuitive and responsive user interface that helps
+            users get things done with less effort and time with those
+            technologies.
+          </p>
+        </div>
         <div className="grid grid-cols-4 gap-4 mt-5">
           {imagesRoute.map((value, index) => (
             <DisplaySkills url={value} key={index} />
@@ -207,16 +209,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center my-20">
-        <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
-          MY WORKS
-        </p>
-        <ActiveText
-          isActive={true}
-          leftText="Featured"
-          rightText=" Works"
-          textSize="text-2xl font-bold text-center"
-        />
+      <section className="flex flex-col items-center my-20 md:items-start">
+        <div className="flex flex-col items-center md:items-start">
+          <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
+            MY WORKS
+          </p>
+          <ActiveText
+            isActive={true}
+            leftText="Featured"
+            rightText=" Works"
+            textSize="text-2xl font-bold text-center"
+          />
+        </div>
         <div className="group relative flex items-center justify-center flex-col">
           {recentProjects.map((value) => (
             <DisplayProject
@@ -225,58 +229,62 @@ export default function Home() {
               duration={value.duration}
               image={value.image}
               key={value.image}
+              alt={value.alt}
             />
           ))}
         </div>
       </section>
 
-      <section className="flex flex-col items-center my-20">
+      <section className="flex flex-col items-center my-20 sm:flex-row md:justify-between lg:gap-20">
         <div className="relative flex items-center justify-center">
           <Image
             src="/daniel.svg"
             alt="Daniel Rey picture"
             width={220}
             height={220}
-            className="w-[200px] h-[200px] rounded-[50%] absolute"
+            className="w-[200px] h-[200px] rounded-[50%] absolute md:w-[250px] md:h-[250px] md:top-[2px]"
           />
           <Image
             src="/opentowork.png"
             alt="Open to work image"
-            width={300}
-            height={300}
-            className="w-[200px] h-[200px] rounded-[50%] z-10"
+            width={220}
+            height={220}
+            className="w-[200px] h-[200px] rounded-[50%] z-10 sm:w-[150px] sm:h-[150px] md:w-[250px] md:h-[250px]"
           />
         </div>
-        <p className="text-center bg-[#424141] rounded-2xl py-1 mt-3 px-4 text-xs w-fit">
-          WHO I AM
-        </p>
-        <ActiveText
-          isActive={true}
-          leftText="About"
-          rightText=" Me"
-          textSize="text-2xl font-bold text-center"
-        />
-        <p className="text-justify my-4 font-light text-sm">
-          Hi I’m Daniel have created various Web Apps and Android Apps when
-          developing these I have implemented complex algorithm and scale the
-          product according to the clients need. Additionally I have integrated
-          an API to both web and mobile app which leads me to become a better
-          developer and understand the underlying conflict. With almost 2 years
-          of experience in developing complex application I have been exposed to
-          many problems so I can guaranteed that I will fulfill my job if you
-          hire me as a developer.
-        </p>
-        <Button
-          isFullWidth={true}
-          text="Hire Me"
-          onClick={handleHireMe}
-          key="hire-me"
-        />
+        <div className="flex items-center flex-col sm:max-w-sm md:max-w-lg sm:items-start sm:ml-5 md:ml-5">
+          <p className="text-center bg-[#424141] rounded-2xl py-1 mt-3 px-4 text-xs w-fit">
+            WHO I AM
+          </p>
+          <ActiveText
+            isActive={true}
+            leftText="About"
+            rightText=" Me"
+            textSize="text-2xl font-bold text-center md:text-4xl"
+          />
+          <p className="text-justify my-4 font-light text-sm">
+            Hi I’m Daniel have created various Web Apps and Android Apps when
+            developing these I have implemented complex algorithm and scale the
+            product according to the clients need. Additionally I have
+            integrated an API to both web and mobile app which leads me to
+            become a better developer and understand the underlying conflict.
+            With almost 2 years of experience in developing complex application
+            I have been exposed to many problems so I can guaranteed that I will
+            fulfill my job if you hire me as a developer.
+          </p>
+          <Button
+            isFullWidth={true}
+            text="Hire Me"
+            onClick={handleHireMe}
+            key="hire-me"
+            className="sm:w-36"
+          />
+        </div>
       </section>
 
       <section className="flex items-center my-20 bg-[#292D30] px-4 py-9">
-        <div className="flex flex-col justify-center items-center">
-          <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
+        <div className="flex flex-col justify-center items-center sm:items-start">
+          <p className="bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
             CONTACT
           </p>
           <p className="text-2xl font-bold text-center">
@@ -334,7 +342,7 @@ export default function Home() {
             />
           </form>
         </div>
-        <div className="hidden">
+        <div className="hidden sm:block">
           <Image
             src="/telephone.png"
             alt="Telephone picture"

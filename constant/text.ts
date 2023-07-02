@@ -26,8 +26,20 @@ export const imagesRoute: string[] = [
 ]
 
 export const recentProjects: ProjectProps[] = [
-    { title: "Personal Portfolio", image: "/project-one.png", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "3 Days" },
-    { title: "Landing Page", image: "/project-two.png", description: "This is just a sample description for my project two. Please do not angry at me😂", duration: "3 Days" },
-    { title: "Business Calculator App", image: "/project-four.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "4 Days" },
-    { title: "ITrust Application", image: "/project-three.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "6 - 8 Months" },
+    { title: "Personal Portfolio", alt: "Image of my personal portfolio", image: "/project-one.png", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "3 Days" },
+    { title: "Landing Page", alt: "Image of my landing page", image: "/project-two.png", description: "This is just a sample description for my project two. Please do not angry at me😂", duration: "3 Days" },
+    { title: "Business Calculator App", alt: "Image of my business calculator app", image: "/project-four.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "4 Days" },
+    { title: "ITrust Application", alt: "Image of my maternal health application", image: "/project-three.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "6 - 8 Months" },
+];
+
+type LinksProps = {
+    text: string,
+    route: string
+}
+
+export const usefulLinks: LinksProps[] = [
+    { text: "Home", route: "/" }, { text: "About", route: "/about" }, { text: "Skills", route: "/skills" }, { text: "Portfolio", route: "/portfolio" }, { text: "Contact", route: "/contact" }
+];
+export const socialMedia: LinksProps[] = [
+    { text: "Github", route: "/" }, { text: "Linkedin", route: "/" }, { text: "Facebook", route: "/" }, { text: "Twitter", route: "/" }, { text: "Leetcode", route: "/" }
 ];

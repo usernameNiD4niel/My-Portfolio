@@ -25,7 +25,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
-        <footer>
+        <footer className="flex flex-col items-center gap-y-6 bg-black py-5">
           <Footer />
         </footer>
       </body>
