@@ -19,15 +19,15 @@ const DisplayProject = ({
   duration,
 }: ProjectProps): JSX.Element => {
   return (
-    <>
+    <div className="relative group">
       <Image
         src={image}
         alt={alt}
-        width={250}
-        height={250}
-        className="w-full mx-5 h-auto peer/image-proj mt-10"
+        width={500}
+        height={500}
+        className="w-full transition-opacity ease-in-out duration-300 h-auto mt-10 md:mt-0 md:w-[380px] md:group-hover:opacity-30"
       />
-      <div className="flex flex-col gap-2 my-4">
+      <div className="flex flex-col gap-2 my-4 md:hidden md:group-hover:flex md:absolute md:group-hover:inset-0 md:p-3">
         <div className="flex items-center justify-between">
           <Link href="/">
             <h3 className="text-2xl font-bold">{title}</h3>
@@ -55,17 +55,15 @@ const DisplayProject = ({
         </div>
         <p className="text-sm font-thin">Duration: {duration}</p>
         <p className="text-justify">{description}</p>
-
-        <Link href="/" target="_blank">
-          <ActiveText
-            leftText="Read"
-            rightText=" More"
-            textSize="text-sm mt-5"
-            isActive={true}
-          />
-        </Link>
+        <Button
+          onClick={() => {}}
+          text="Read More"
+          className="font-bold w-fit mt-5"
+          key="Read More"
+          isFullWidth={false}
+        />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -96,7 +94,7 @@ const HeroCard = ({
         alt={alt}
         width={30}
         height={30}
-        className="w-10 h-auto opacity-80"
+        className="w-8 h-auto"
       />
       <div className="flex items-center flex-col sm:flex-row mx-3">
         <h3 className="text-lg text-[#EE5938] font-bold">
@@ -108,9 +106,9 @@ const HeroCard = ({
       <Image
         src="/right-arrow.png"
         alt="right arrow icon"
-        width={30}
-        height={30}
-        className="w-auto h-auto"
+        width={25}
+        height={25}
+        className="w-5 h-auto"
       />
     </div>
   );
@@ -209,8 +207,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center my-20 md:items-start">
-        <div className="flex flex-col items-center md:items-start">
+      <section className="flex flex-col items-center my-20 md:max-w-3xl">
+        <div className="flex flex-col items-center">
           <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
             MY WORKS
           </p>
@@ -218,10 +216,10 @@ export default function Home() {
             isActive={true}
             leftText="Featured"
             rightText=" Works"
-            textSize="text-2xl font-bold text-center"
+            textSize="text-2xl font-bold text-center md:text-3xl md:mb-5"
           />
         </div>
-        <div className="group relative flex items-center justify-center flex-col">
+        <div className="relative flex items-center justify-center flex-col md:flex-row gap-3 flex-wrap md:items-start md:gap-0">
           {recentProjects.map((value) => (
             <DisplayProject
               title={value.title}

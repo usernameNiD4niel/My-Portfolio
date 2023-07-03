@@ -11,7 +11,7 @@ const Footer = () => {
           isActive={true}
           leftText="Daniel"
           rightText=" Rey"
-          textSize="text-2xl text-center"
+          textSize="text-2xl text-center md:text-start"
           key="Daniel Rey"
         />
         <p className="text-lg font-semibold">
@@ -42,9 +42,9 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center md:items-start md:max-w-xs">
         <h3 className="text-1xl font-bold text-center">Newsletter</h3>
-        <p className="text-center mx-4">
+        <p className="text-center mx-4 md:text-start md:mx-0">
           Enter your email and get notified to be updated about the news
         </p>
         <form className="relative flex items-center justify-center w-fit my-2">
