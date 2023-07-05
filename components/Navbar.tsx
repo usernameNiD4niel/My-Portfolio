@@ -9,11 +9,20 @@ import ActiveText from "./reusable/ActiveText";
 import { NavigationText } from "@/constant/helper";
 
 const Navbar = () => {
-  const [viewing] = useStore((state) => [state.viewing]);
+  const [viewing, setViewing] = useStore((state) => [
+    state.viewing,
+    state.setViewing,
+  ]);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleHireMe = (event: MouseEvent) => {
     console.log("test");
+  };
+
+  const handleStateNav = (activeNav: string) => {
+    if (activeNav !== viewing) {
+      setViewing(activeNav);
+    }
   };
 
   const handleBurgerMenu = (): void => {
@@ -22,14 +31,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-all duration-300 ease-in-out ${
+      className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-all duration-300 ease-in-out md:px-32 ${
         isOpen
           ? "inset-0 flex-col justify-start bg-[#212529] opacity-[0.95]"
           : "justify-between bg-gradient-to-r from-[#212529]"
       }`}
     >
       <div
-        className={`flex items-center ${
+        className={`flex items-center cursor-pointer md:hidden ${
           isOpen ? "absolute top-5 right-2" : "pt-3 pb-5 px-1 justify-center"
         }`}
         onClick={handleBurgerMenu}
@@ -47,12 +56,16 @@ const Navbar = () => {
         />
       </Link>
       <ul
-        className={`gap-4 ${
+        className={`gap-4 md:flex ${
           isOpen ? "flex items-center text-sm flex-col my-8" : "hidden"
         }`}
       >
         <li>
-          <Link href="/" as="/">
+          <Link
+            href="/"
+            as="/"
+            onClick={() => handleStateNav(NavigationText.home)}
+          >
             <ActiveText
               isActive={viewing === NavigationText.home}
               leftText="Ho"
@@ -62,7 +75,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/skills" as="/skills">
+          <Link
+            href="#skills"
+            as="#skills"
+            onClick={() => handleStateNav(NavigationText.skills)}
+          >
             <ActiveText
               isActive={viewing === NavigationText.skills}
               leftText="Ski"
@@ -72,7 +89,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/portfolio" as="/portfolio">
+          <Link
+            href="#portfolio"
+            as="#portfolio"
+            onClick={() => handleStateNav(NavigationText.portfolio)}
+          >
             <ActiveText
               isActive={viewing === NavigationText.portfolio}
               leftText="Port"
@@ -82,7 +103,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/contact" as="/contact">
+          <Link
+            href="#contact"
+            as="#contact"
+            onClick={() => handleStateNav(NavigationText.contact)}
+          >
             <ActiveText
               isActive={viewing === NavigationText.contact}
               leftText="Con"
@@ -92,7 +117,9 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <Button onClick={handleHireMe} text="Download CV" />
+      <a href="/DanielRey.pdf" download="DanielRey.pdf">
+        <Button onClick={handleHireMe} text="Download CV" />
+      </a>
     </nav>
   );
 };

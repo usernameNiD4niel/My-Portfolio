@@ -1,9 +1,12 @@
 "use client";
 
+import Contact from "@/components/Contact";
 import ActiveText from "@/components/reusable/ActiveText";
 import Button from "@/components/reusable/Button";
+import "./globals.css";
 import { CardProps, ProjectProps } from "@/constant/helper";
 import { cardText, imagesRoute, recentProjects } from "@/constant/text";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -69,7 +72,7 @@ const DisplayProject = ({
 
 const DisplaySkills = ({ url }: SkillsParams): JSX.Element => {
   return (
-    <div className="p-2 rounded-lg bg-[#383E45]">
+    <div className="p-2 rounded-lg bg-[#383E45] cursor-pointer hover:opacity-80">
       <Image
         src={url}
         alt="Programming tools I use"
@@ -88,7 +91,7 @@ const HeroCard = ({
   alt,
 }: CardProps): JSX.Element => {
   return (
-    <div className="flex items-center justify-between w-full mx-8 my-2 p-3 bg-[#323435] drop-shadow-xl sm:mx-2 rounded-xl">
+    <div className="flex items-center justify-between w-full mx-8 my-2 p-3 bg-[#323435] drop-shadow-xl sm:mx-2 rounded-xl md:p-5">
       <Image
         src={imageUrl}
         alt={alt}
@@ -114,34 +117,10 @@ const HeroCard = ({
   );
 };
 
-const SelectableButton = ({
-  text,
-  isActive,
-}: {
-  text: string;
-  isActive: boolean;
-}): JSX.Element => {
-  return (
-    <button
-      type="button"
-      className={`border border-[#686A6C] rounded-lg text-sm font-light p-3 my-1 hover:opacity-80 ${
-        isActive
-          ? "opacity-100 bg-gradient-to-l from-[#EE5938] to-[#21939C]"
-          : "opacity-90"
-      }`}
-    >
-      {text}
-    </button>
-  );
-};
-
 export default function Home() {
   const handleHireMe = () => {
     console.log("Connect to contact form");
   };
-
-  const inputsClass: string =
-    "px-2 py-4 rounded-md text-slate-100 bg-[#212529]";
 
   return (
     <main className="my-28 mx-5 flex flex-col items-center justify-center">
@@ -179,7 +158,10 @@ export default function Home() {
         ))}
       </div>
 
-      <section className="my-20 flex flex-col items-center justify-center sm:flex-row md:gap-8 md:h-[70vh]">
+      <section
+        className="my-20 flex flex-col items-center justify-center sm:flex-row md:gap-8 md:h-[70vh]"
+        id="skills"
+      >
         <div className="flex flex-col items-center justify-center sm:items-start">
           <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
             MY SKILLS
@@ -207,7 +189,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center my-20 md:max-w-3xl">
+      <section
+        className="flex flex-col items-center my-20 md:max-w-3xl"
+        id="portfolio"
+      >
         <div className="flex flex-col items-center">
           <p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
             MY WORKS
@@ -233,7 +218,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center my-20 sm:flex-row md:justify-between lg:gap-20">
+      <section
+        className="flex flex-col items-center my-20 sm:flex-row md:justify-between lg:gap-20"
+        id="about"
+      >
         <div className="relative flex items-center justify-center">
           <Image
             src="/daniel.svg"
@@ -280,76 +268,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex items-center my-20 bg-[#292D30] px-4 py-9">
-        <div className="flex flex-col justify-center items-center sm:items-start">
-          <p className="bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
-            CONTACT
-          </p>
-          <p className="text-2xl font-bold text-center">
-            Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span>{" "}
-            Into <span className="text-[#21939C]">Real</span>
-          </p>
-          <form className="flex flex-col w-full my-4 gap-2">
-            <input
-              type="text"
-              name="fullname"
-              id="fullname"
-              placeholder="Fullname"
-              className={inputsClass}
-            />
-            <p className="mt-3">I have a...</p>
-            <div className="flex gap-2 flex-wrap">
-              <SelectableButton
-                text="Question"
-                isActive={false}
-                key="Question"
-              />
-              <SelectableButton
-                text="Feedback"
-                isActive={true}
-                key="Feedback"
-              />
-              <SelectableButton
-                text="Work for you"
-                isActive={false}
-                key="Work for you"
-              />
-            </div>
-            <textarea
-              name="message"
-              id="message"
-              cols={10}
-              rows={8}
-              required
-              className={inputsClass}
-              placeholder="What's your message?"
-            ></textarea>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              className={inputsClass}
-              placeholder="Email Address"
-            />
-            <Button
-              isFullWidth={true}
-              onClick={handleHireMe}
-              text="Submit"
-              key="Submit"
-            />
-          </form>
-        </div>
-        <div className="hidden sm:block">
-          <Image
-            src="/telephone.png"
-            alt="Telephone picture"
-            width={450}
-            height={450}
-            className="w-60 h-auto"
-          />
-        </div>
-      </section>
+      <Contact />
     </main>
   );
 }
