@@ -56,7 +56,15 @@ const Contact = () => {
         "BhzhUYs0--4eH2Oln"
       )
       .then(
-        (result) => setIsContactSubmit(false),
+        (result) => {
+          setIsContactSubmit(false);
+          setContactState({
+            sender_name: "",
+            message: "",
+            email: "",
+            subject: "",
+          });
+        },
         (error) => setIsContactSubmit(false)
       );
   };
