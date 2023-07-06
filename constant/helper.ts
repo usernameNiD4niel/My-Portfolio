@@ -34,4 +34,12 @@ export type ProjectProps = {
     image: string
     duration: string
     alt: string
+    github_url: string | undefined
+    live_url: string | undefined
 };
+
+export enum SelectableButtonParam {
+    question = "I have a Question",
+    feedback = "I have a Feedback",
+    work_for_you = "I have a Work for you"
+}

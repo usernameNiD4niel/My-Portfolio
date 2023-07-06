@@ -1,10 +1,9 @@
-"use_client";
-
 import Image from "next/image";
 import Button from "./reusable/Button";
 import { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { SelectableButtonParam } from "@/constant/helper";
 
 const SelectableButton = ({
   text,
@@ -39,6 +38,10 @@ const Contact = () => {
     email: "",
     subject: "",
   });
+
+  const [selectedButton, setSelectedButton] = useState("");
+  const [isContactSubmit, setIsContactSubmit] = useState(false);
+
   const inputsClass: string =
     "px-2 py-4 rounded-md text-slate-100 bg-[#212529]";
 
@@ -50,16 +53,17 @@ const Contact = () => {
         "service_9vvtqjl",
         "template_lijzhot",
         contactState,
-        "np3RcjxrCe_jVTZ7n"
+        "BhzhUYs0--4eH2Oln"
       )
       .then(
-        (result) => alert(`completed: ${result.text}`),
-        (error) => alert(`error: ${error}`)
+        (result) => setIsContactSubmit(false),
+        (error) => setIsContactSubmit(false)
       );
   };
 
   const handleSubject = (subject: string): void => {
     setContactState({ ...contactState, subject });
+    setSelectedButton(subject);
   };
 
   return (
@@ -67,7 +71,7 @@ const Contact = () => {
       className="flex items-center my-20 bg-[#292D30] px-4 py-9"
       id="contact"
     >
-      <div className="flex flex-col justify-center items-center sm:items-start">
+      <div className="flex flex-col justify-center items-center sm:items-start relative">
         <p className="bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
           CONTACT
         </p>
@@ -75,7 +79,10 @@ const Contact = () => {
           Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span> Into{" "}
           <span className="text-[#21939C]">Real</span>
         </p>
-        <form className="flex flex-col w-full my-4 gap-2" onSubmit={sendEmail}>
+        <form
+          className="flex flex-col w-full my-4 gap-2 relative"
+          onSubmit={sendEmail}
+        >
           <input
             type="text"
             name="sender_name"
@@ -95,18 +102,18 @@ const Contact = () => {
             <SelectableButton
               text="Question"
               addEvent={handleSubject}
-              isActive={false}
+              isActive={selectedButton === SelectableButtonParam.question}
               key="Question"
             />
             <SelectableButton
               text="Feedback"
               addEvent={handleSubject}
-              isActive={true}
+              isActive={selectedButton === SelectableButtonParam.feedback}
               key="Feedback"
             />
             <SelectableButton
               text="Work for you"
-              isActive={false}
+              isActive={selectedButton === SelectableButtonParam.work_for_you}
               addEvent={handleSubject}
               key="Work for you"
             />
@@ -138,11 +145,25 @@ const Contact = () => {
           />
           <Button
             isFullWidth={true}
-            onClick={() => {}}
+            onClick={() => setIsContactSubmit((prev) => !prev)}
             text="Submit"
             key="Submit"
+            className={`${isContactSubmit ? "opacity-20" : "opacity-100"}`}
           />
         </form>
+        <div
+          className={`absolute w-full items-center justify-center ${
+            isContactSubmit ? "flex" : "hidden"
+          }`}
+        >
+          <Image
+            src="/loading.svg"
+            alt="loading svg"
+            width={30}
+            height={30}
+            className="w-20 h-auto"
+          />
+        </div>
       </div>
       <div className="hidden sm:block">
         <Image

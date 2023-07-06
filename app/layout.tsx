@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/no_copyright_infrigement.svg" sizes="any" />
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} scroll-smooth`}>
         <Navbar />
 
         {children}

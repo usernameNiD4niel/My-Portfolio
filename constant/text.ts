@@ -26,10 +26,10 @@ export const imagesRoute: string[] = [
 ]
 
 export const recentProjects: ProjectProps[] = [
-    { title: "Personal Portfolio", alt: "Image of my personal portfolio", image: "/project-one.png", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "3 Days" },
-    { title: "Landing Page", alt: "Image of my landing page", image: "/project-two.png", description: "This is just a sample description for my project two. Please do not angry at me😂", duration: "3 Days" },
-    { title: "Business Calculator App", alt: "Image of my business calculator app", image: "/project-four.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "4 Days" },
-    { title: "ITrust Application", alt: "Image of my maternal health application", image: "/project-three.jpg", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "6 - 8 Months" },
+    { title: "Personal Portfolio", alt: "Image of my personal portfolio", image: "/project-one.png", description: "Typescript, React, NextJS, Tailwind, Zustand, EmailJS", duration: "3 Days", github_url: "https://github.com/usernameNiD4niel/My-Portfolio.git", live_url: "https://my-portfolio-xi-tan-89.vercel.app" },
+    { title: "Landing Page", alt: "Image of my landing page", image: "/project-two.png", description: "Typescript, React, NextJS, Tailwind", duration: "3 Days", github_url: "https://github.com/usernameNiD4niel/LandingPageWebsite.git", live_url: "https://landing-page-website-nextjs.vercel.app/" },
+    { title: "Business Calculator App", alt: "Image of my business calculator app", image: "/project-calcu.png", description: "Java, XML, SQLite", duration: "4 Days", github_url: "https://github.com/usernameNiD4niel/BusinessCalculator.git", live_url: "https://github.com/usernameNiD4niel/BusinessCalculator/blob/main/app/src/main/res/drawable/frame.png" },
+    { title: "ITrust Application", alt: "Image of my maternal health application", image: "/project-four.png", description: "This is just a sample description for my project one. Please do not angry at me😂", duration: "6 - 8 Months", github_url: "https://github.com/usernameNiD4niel/ItrustApp.git", live_url: "https://github.com/usernameNiD4niel/ItrustApp/blob/main/app/src/main/res/drawable/itrust_qr.png" },
 ];
 
 type LinksProps = {

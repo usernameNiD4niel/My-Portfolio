@@ -4,9 +4,10 @@ import { MouseEvent, useState } from "react";
 import Button from "./reusable/Button";
 import Image from "next/image";
 import useStore from "@/zustand/NavigationBar";
-import Link from "next/link";
 import ActiveText from "./reusable/ActiveText";
 import { NavigationText } from "@/constant/helper";
+
+import Link from "next/link";
 
 const Navbar = () => {
   const [viewing, setViewing] = useStore((state) => [
@@ -22,6 +23,7 @@ const Navbar = () => {
   const handleStateNav = (activeNav: string) => {
     if (activeNav !== viewing) {
       setViewing(activeNav);
+      setIsOpen(false);
     }
   };
 
@@ -31,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-all duration-300 ease-in-out md:px-32 ${
+      className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-opacity duration-300 ease-in-out md:px-32 ${
         isOpen
           ? "inset-0 flex-col justify-start bg-[#212529] opacity-[0.95]"
           : "justify-between bg-gradient-to-r from-[#212529]"
@@ -45,7 +47,12 @@ const Navbar = () => {
       >
         <div className={`${isOpen ? "animate-burger" : "burger-menu"}`} />
       </div>
-      <Link href="/" as="/" className={`${isOpen && "mt-20"} inline-block`}>
+      <Link
+        href="/"
+        as="/"
+        className={`${isOpen && "mt-20"} inline-block`}
+        onClick={() => handleStateNav(NavigationText.home)}
+      >
         <Image
           src="/no_copyright_infrigement.svg"
           alt="This image is a logo image from internet"
@@ -70,7 +77,7 @@ const Navbar = () => {
               isActive={viewing === NavigationText.home}
               leftText="Ho"
               rightText="me"
-              textSize="text-lg"
+              textSize="text-sm font-bold"
             />
           </Link>
         </li>
@@ -84,7 +91,7 @@ const Navbar = () => {
               isActive={viewing === NavigationText.skills}
               leftText="Ski"
               rightText="lls"
-              textSize="text-lg"
+              textSize="text-sm font-bold"
             />
           </Link>
         </li>
@@ -98,7 +105,7 @@ const Navbar = () => {
               isActive={viewing === NavigationText.portfolio}
               leftText="Port"
               rightText="folio"
-              textSize="text-lg"
+              textSize="text-sm font-bold"
             />
           </Link>
         </li>
@@ -112,7 +119,7 @@ const Navbar = () => {
               isActive={viewing === NavigationText.contact}
               leftText="Con"
               rightText="tact"
-              textSize="text-lg"
+              textSize="text-sm font-bold"
             />
           </Link>
         </li>
