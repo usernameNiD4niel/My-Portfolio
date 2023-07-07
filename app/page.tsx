@@ -68,8 +68,8 @@ const DisplayProject = ({
             </Link>
           </div>
         </div>
-        <p className="text-sm font-thin">Duration: {duration}</p>
-        <p className="text-justify">{description}</p>
+        <p className="text-sm font-thin">Finished on: {duration}</p>
+        <p className="text-start">Tech Stack: {description}</p>
         <Button
           onClick={() => {}}
           text="Read More"
