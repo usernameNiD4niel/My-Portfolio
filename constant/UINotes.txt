@@ -1,0 +1,48 @@
+A year of experience in UI/UX Design.
+
+Way back 2021 of October, I create a Desktop Application in JavaFX
+with MySQL as my database. During that time I am having a hard time
+creating the look and feel of the system so what I did is I start 
+planning all of the possible features and urgent features of the 
+app. After finalizing all of the features I immediately start 
+coding without creating the sketch or preview to what could be the 
+result of this project. 
+
+Upon building this system I am starting to struggle how to make the
+UI looks beautiful and appealing, because of that I end up coding 
+simple feature for days and 80% of the time I am tweaking and testing
+different kinds of looks. Days have gone by I am still building 
+the application with only 50% of progress(it is a simple desktop app).
+So what I did in order for me to balance my time to UI and creating 
+business logic I start writing my rough sketch to a piece of shit 
+of paper and try to visualize how it looks. After doing that the 
+time I spent on building the UI of the app is same on the time 
+creating business logic of my app. After that project I always do 
+rough sketching to papers and a lotted at least 1 to 2 days of 
+finalizing the features and UI. 
+
+Even though I find writing UI design to paper much more productive 
+and easy way to deal with I still struggle on my UI part and I know 
+to my self that I could do more better than that(UI). When I am 
+scrolling to facebook feed I stumbled to a group post that contains
+the design of his work it is a web design created using Figma software
+and I try reading the comments wondering if someone asked him what 
+is figma but unfortunately it doesn't have a comment so I search it 
+on myself and I found the official website of the figma and try to
+create an account and get my hands dirty. That day I am very happy 
+that there's a website exist like that so I download the desktop 
+version of figma and try building my project. That's where my UI/UX 
+begins. 
+
+Furthermore during my 4th year I was able to use adobe xd for figma
+substitute and I found it more user friendly and easy to use but 
+both XD and Figma are use friendly it's just my preference. Now 
+everytime I create a project especially when it's kind of big 
+I always create a drawing to papers and transfer that to UI tool 
+and make it more intereactive. 
+
+As of today I now have the experience of creating: 
+-Rough sketch
+-Create a prototype of the UI
+-Make it interactive using wireframing
+-Creates multiple viewport UI

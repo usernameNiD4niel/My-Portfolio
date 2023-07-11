@@ -124,7 +124,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <a href="/DanielRey.pdf" download="DanielRey.pdf">
+      <a href="/se-cv.pdf" download="se-cv.pdf">
         <Button onClick={handleHireMe} text="Download CV" />
       </a>
     </nav>
