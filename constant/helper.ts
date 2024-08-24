@@ -2,6 +2,8 @@ import { MouseEvent } from "react";
 
 export type ButtonProps = {
 	text: string;
+	type?: "button" | "reset" | "submit";
+	disabled?: boolean;
 	onClick?: (event: MouseEvent) => void;
 	isFullWidth?: boolean;
 	className?: string;

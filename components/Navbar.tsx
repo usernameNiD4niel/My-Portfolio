@@ -24,7 +24,7 @@ const Navbar = () => {
 			className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-opacity duration-300 ease-in-out md:px-32 ${
 				isOpen
 					? "inset-0 flex-col justify-start bg-primary opacity-[0.95]"
-					: "justify-between bg-gradient-to-r from-primary"
+					: "justify-between bg-gradient-to-bl from-[#323435]"
 			}`}>
 			<div
 				className={`flex items-center cursor-pointer md:hidden ${

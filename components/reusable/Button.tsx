@@ -7,10 +7,14 @@ const Button = ({
 	className,
 	from = "from-[#21939C]",
 	to = "to-[#EE5938]",
+	disabled,
+	type,
 }: ButtonProps) => {
 	return (
 		<button
 			onClick={onClick}
+			disabled={disabled}
+			type={type}
 			className={`bg-gradient-to-l font-semibold px-4 py-3 rounded-4xl text-sm hover:opacity-80 ${to} ${from} ${
 				isFullWidth && "w-full"
 			} ${className}`}>

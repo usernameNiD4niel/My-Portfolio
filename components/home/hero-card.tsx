@@ -7,7 +7,7 @@ const HeroCard = () => {
 		<div className="flex flex-col items-center justify-center mt-20 w-full md:max-w-3xl gap-2 sm:flex-row">
 			{cardText.map((value) => (
 				<div
-					className="w-full flex gap-4 p-4 rounded-md items-center bg-primary"
+					className="w-full flex gap-4 p-4 rounded-md items-center bg-secondary"
 					key={value.imageUrl}>
 					<Image
 						src={value.imageUrl}
