@@ -1,8 +1,8 @@
-import HireMe from "@/components/about/hire-me";
 import ActiveText from "@/components/reusable/ActiveText";
 import TabActivator from "@/components/reusable/TabActivator";
 import { NavigationText } from "@/constant/helper";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -40,13 +40,19 @@ const About = () => {
 						Hi I&apos;m Daniel I have created various Web Apps and Android Apps
 						when developing these I have implemented complex algorithm and scale
 						the product according to the clients need. Additionally I have
-						integrated an API to both web and mobile app which leads me to
-						become a better developer and understand the underlying conflict.
-						With almost 2 years of experience in developing complex application
-						I have been exposed to many problems so I can guaranteed that I will
-						fulfill my job if you hire me as a developer.
+						integrated an API to both web and mobile app which helps me to
+						understand the underlying conflict. With almost 2 years of
+						experience in developing complex application I have been exposed to
+						many problems so I can guaranteed that I will fulfill my job if you
+						hire me as a developer.
 					</p>
-					<HireMe />
+					<Link
+						className="bg-gradient-to-l font-semibold py-[0.85rem] w-full rounded-4xl text-sm hover:opacity-80 to-[#EE5938] from-[#21939C] sm:w-36 text-center"
+						href={
+							"/contact?subject=I have a Work for you&message=Daniel, I have a work for you. This is a fulltime remote work, here's the details of the work. (Add the details here...)"
+						}>
+						Hire Me
+					</Link>
 				</div>
 			</div>
 		</section>

@@ -64,7 +64,7 @@ const Contact = () => {
 						subject: "",
 					});
 				},
-				(error) => setIsContactSubmit(false),
+				() => setIsContactSubmit(false),
 			);
 	};
 
@@ -108,19 +108,16 @@ const Contact = () => {
 							text="Question"
 							addEvent={handleSubject}
 							isActive={selectedButton === SelectableButtonParam.question}
-							key="Question"
 						/>
 						<SelectableButton
 							text="Feedback"
 							addEvent={handleSubject}
 							isActive={selectedButton === SelectableButtonParam.feedback}
-							key="Feedback"
 						/>
 						<SelectableButton
 							text="Work for you"
 							isActive={selectedButton === SelectableButtonParam.work_for_you}
 							addEvent={handleSubject}
-							key="Work for you"
 						/>
 					</div>
 					<textarea

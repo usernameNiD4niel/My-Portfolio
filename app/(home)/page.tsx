@@ -28,7 +28,7 @@ const HomePage = () => {
 			</h3>
 			<h1 className="text-center text-3xl font-bold mt-2">Software Engineer</h1>
 			<p className="text-center text-1xl mt-2">
-				I design and code beautifully simple things, and I love what I do.
+				I love seeing technology changing the world we lived in.
 			</p>
 
 			{/* Make the card gradient */}
