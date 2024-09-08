@@ -1,13 +1,14 @@
 import ActiveText from "@/components/reusable/ActiveText";
+import TabActivator from "@/components/reusable/TabActivator";
+import { NavigationText } from "@/constant/helper";
 import { imagesRoute } from "@/constant/text";
 import Image from "next/image";
 import React from "react";
 
 const MySkills = () => {
 	return (
-		<section
-			className="my-20 flex flex-col items-center justify-center sm:flex-row md:gap-8 md:h-[70vh]"
-			id="skills">
+		<section className="my-20 h-[80vh] flex flex-col items-center justify-center sm:flex-row md:gap-8 md:h-[70vh]">
+			<TabActivator viewing={NavigationText.Skills} />
 			<div className="flex flex-col items-center justify-center sm:items-start">
 				<p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
 					MY SKILLS

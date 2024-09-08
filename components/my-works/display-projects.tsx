@@ -14,13 +14,13 @@ const DisplayProjects: FC<ProjectProps> = ({
 	title,
 }) => {
 	return (
-		<div className="relative group">
+		<div className="relative group px-4 md:px-0">
 			<Image
 				src={image}
 				alt={alt}
 				width={500}
 				height={600}
-				className="w-full transition-opacity ease-in-out duration-300 h-auto mt-10 md:mt-0 md:w-[380px] md:group-hover:opacity-30"
+				className="w-full transition-opacity ease-in-out duration-300 h-auto md:mt-0 md:w-[380px] md:group-hover:opacity-30"
 			/>
 			<div className="flex flex-col gap-2 justify-center my-4 md:hidden md:group-hover:flex md:absolute md:group-hover:inset-0 md:px-3">
 				<div className="flex items-center justify-between">
@@ -59,7 +59,6 @@ const DisplayProjects: FC<ProjectProps> = ({
 				<p className="text-sm font-thin">Finished on: {duration}</p>
 				<p className="text-start">Tech Stack: {description}</p>
 				<Button
-					onClick={() => {}}
 					text="Read More"
 					className="font-bold w-fit mt-5"
 					key="Read More"
