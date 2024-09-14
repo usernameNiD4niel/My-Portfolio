@@ -47,16 +47,16 @@ export const recentProjects: ProjectProps[] = [
 	{
 		title: "Personal Portfolio",
 		alt: "Image of my personal portfolio",
-		image: "/project-one.png",
+		image: "/project-one.jpg",
 		description: "Typescript, React, NextJS, Tailwind, Zustand, EmailJS",
 		duration: "July 7, 2023",
 		github_url: "https://github.com/usernameNiD4niel/My-Portfolio.git",
-		live_url: "https://my-portfolio-xi-tan-89.vercel.app",
+		live_url: "/",
 	},
 	{
 		title: "Landing Page",
 		alt: "Image of my landing page",
-		image: "/project-two.png",
+		image: "/project-two.jpg",
 		description: "Typescript, React, NextJS, Tailwind",
 		duration: "June 3, 2023",
 		github_url: "https://github.com/usernameNiD4niel/LandingPageWebsite.git",
@@ -65,18 +65,17 @@ export const recentProjects: ProjectProps[] = [
 	{
 		title: "ITrust Application",
 		alt: "Image of my maternal health application",
-		image: "/project-four.png",
-		description:
-			"This is just a sample description for my project one. Please do not angry at me😂",
+		image: "/project-four.jpg",
+		description: "Java, Material Library, Volley, Firebase, SQLite, and more.",
 		duration: "May 22, 2023",
 		github_url: "https://github.com/usernameNiD4niel/ItrustApp.git",
 		live_url:
-			"https://github.com/usernameNiD4niel/ItrustApp/blob/main/app/src/main/res/drawable/itrust_qr.png",
+			"https://github.com/usernameNiD4niel/ItrustApp/blob/main/app/src/main/res/drawable/itrust_qr.jpg",
 	},
 	{
 		title: "Business Calculator App",
 		alt: "Image of my business calculator app",
-		image: "/project-calcu.png",
+		image: "/project-three.jpg",
 		description: "Java, XML, SQLite",
 		duration: "March 27, 2022",
 		github_url: "https://github.com/usernameNiD4niel/BusinessCalculator.git",

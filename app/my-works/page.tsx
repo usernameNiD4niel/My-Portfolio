@@ -7,7 +7,7 @@ import React from "react";
 
 const MyWorks = () => {
 	return (
-		<section className="flex flex-col items-center my-20 mt-28 md:max-w-3xl">
+		<section className="flex flex-col items-center my-20 mt-28 md:max-w-4xl">
 			<TabActivator viewing={NavigationText.Works} />
 			<div className="flex flex-col items-center">
 				<p className="text-center bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
@@ -20,7 +20,8 @@ const MyWorks = () => {
 					textSize="text-2xl font-bold text-center md:text-3xl md:mb-5"
 				/>
 			</div>
-			<div className="relative flex items-center justify-center flex-col md:flex-row gap-3 mt-2 flex-wrap md:items-start md:gap-0">
+			{/* <div className="flex items-center justify-center flex-col md:flex-row gap-3 mt-2 flex-wrap"> */}
+			<div className="flex items-center justify-center flex-col md:flex-row gap-3 mt-2 flex-wrap md:items-start">
 				{recentProjects.map((value) => (
 					<DisplayProjects
 						title={value.title}

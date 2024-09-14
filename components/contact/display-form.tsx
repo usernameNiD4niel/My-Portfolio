@@ -86,7 +86,7 @@ const DisplayForm: FC<Props> = ({ message, subject }) => {
 	return (
 		<>
 			<form
-				className="flex flex-col w-full gap-y-2"
+				className="flex flex-col w-full gap-y-2 mt-2"
 				onSubmit={sendEmail}
 				ref={formRef}>
 				<input

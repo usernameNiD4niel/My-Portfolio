@@ -13,16 +13,16 @@ const Contact: FC<Props> = ({ searchParams }) => {
 	const subject = searchParams?.subject;
 
 	return (
-		<section className="flex justify-center my-20 bg-primary px-4 py-9">
+		<section className="flex justify-center my-20 bg-primary px-4 py-9 pt-3 md:pt-9 w-full">
 			<TabActivator viewing={NavigationText.Contact} />
 			<div className="flex items-center md:p-9 justify-center py-9 pe-0 w-full bg-secondary rounded-md md:max-w-4xl">
-				<div className="flex flex-col justify-center relative">
+				<div className="flex flex-col justify-center relative px-6 md:px-0">
 					<p className="bg-[#424141] rounded-2xl py-1 px-4 text-xs w-fit">
 						CONTACT
 					</p>
 					<p className="text-2xl font-bold md:text-3xl">
 						Let&#39;s Make Your <span className="text-[#EE5938]">Idea</span>{" "}
-						Into <span className="text-[#21939C]">Real</span>
+						Comes Into <span className="text-[#21939C]">Reality</span>
 					</p>
 					<DisplayForm message={message} subject={subject} />
 				</div>

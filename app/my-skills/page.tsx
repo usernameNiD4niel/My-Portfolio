@@ -25,7 +25,7 @@ const MySkills = () => {
 				</h2>
 				<p className="text-center text-sm sm:text-start sm:max-w-md">
 					I develop simple, intuitive and responsive user interface that helps
-					users get things done with less effort and time with those
+					users get things done with less effort and time with these
 					technologies.
 				</p>
 			</div>
