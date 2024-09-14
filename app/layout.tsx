@@ -32,7 +32,7 @@ export default function RootLayout({
 				<main className="w-full flex flex-col items-center justify-center">
 					{children}
 				</main>
-				<footer className="flex flex-col items-center gap-y-6 bg-black py-5 md:flex-row md:justify-center md:gap-x-32 md:py-20">
+				<footer className="flex flex-col  gap-y-6 bg-black py-5 md:flex-row md:justify-evenly w-full md:gap-x-32 md:py-20">
 					<Footer />
 				</footer>
 			</body>

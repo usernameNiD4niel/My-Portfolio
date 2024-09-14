@@ -92,14 +92,18 @@ type LinksProps = {
 export const usefulLinks: LinksProps[] = [
 	{ text: "Home", route: "/" },
 	{ text: "About", route: "/about" },
-	{ text: "Skills", route: "/skills" },
-	{ text: "Portfolio", route: "/portfolio" },
+	{ text: "Blog", route: "/blog" },
 	{ text: "Contact", route: "/contact" },
+	{ text: "Skills", route: "/skills" },
+	{ text: "Works", route: "/works" },
 ];
 export const socialMedia: LinksProps[] = [
-	{ text: "Github", route: "/" },
-	{ text: "Linkedin", route: "/" },
-	{ text: "Facebook", route: "/" },
-	{ text: "Twitter", route: "/" },
-	{ text: "Leetcode", route: "/" },
+	{ text: "Github", route: "https://github.com/usernameNiD4niel" },
+	{
+		text: "Linkedin",
+		route: "https://www.linkedin.com/in/daniel-rey-340468206/",
+	},
+	{ text: "Facebook", route: "https://www.facebook.com/daniel.rey.9440/" },
+	{ text: "Twitter", route: "https://x.com/rey__daniel__" },
+	{ text: "Leetcode", route: "https://leetcode.com/u/daniel_rey/" },
 ];
