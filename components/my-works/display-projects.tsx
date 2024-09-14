@@ -20,7 +20,7 @@ const DisplayProjects: FC<ProjectProps> = ({
 				alt={alt}
 				width={1100}
 				height={700}
-				className="w-full transition-opacity ease-in-out duration-300 h-auto md:mt-0 md:w-[420px] rounded-lg md:group-hover:opacity-30"
+				className="w-full transition-opacity ease-in-out duration-300 h-auto md:mt-0 md:w-[calc((56rem/2)-0.75rem)] rounded-lg md:group-hover:opacity-30"
 			/>
 			<div className="flex flex-col gap-2 justify-center my-4 md:hidden md:group-hover:flex md:absolute md:group-hover:inset-0 md:px-4">
 				<div className="flex items-center justify-between">

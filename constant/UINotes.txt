@@ -14,7 +14,7 @@ simple feature for days and 80% of the time I am tweaking and testing
 different kinds of looks. Days have gone by I am still building 
 the application with only 50% of progress(it is a simple desktop app).
 So what I did in order for me to balance my time to UI and creating 
-business logic I start writing my rough sketch to a piece of shit 
+business logic I start writing my rough sketch to a piece of sheet
 of paper and try to visualize how it looks. After doing that the 
 time I spent on building the UI of the app is same on the time 
 creating business logic of my app. After that project I always do 
@@ -44,5 +44,5 @@ and make it more intereactive.
 As of today I now have the experience of creating: 
 -Rough sketch
 -Create a prototype of the UI
--Make it interactive using wireframing
--Creates multiple viewport UI
+-Make it interactive by wireframing the UI
+-Creates multiple breakpoints of UI

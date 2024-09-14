@@ -94,8 +94,8 @@ export const usefulLinks: LinksProps[] = [
 	{ text: "About", route: "/about" },
 	{ text: "Blog", route: "/blog" },
 	{ text: "Contact", route: "/contact" },
-	{ text: "Skills", route: "/skills" },
-	{ text: "Works", route: "/works" },
+	{ text: "Skills", route: "/my-skills" },
+	{ text: "Works", route: "/my-works" },
 ];
 export const socialMedia: LinksProps[] = [
 	{ text: "Github", route: "https://github.com/usernameNiD4niel" },
