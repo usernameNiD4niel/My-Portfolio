@@ -1,11 +1,10 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 import Button from "./reusable/Button";
 import Image from "next/image";
 import useStore from "@/zustand/NavigationBar";
 import ActiveText from "./reusable/ActiveText";
-import { NavigationText } from "@/constant/helper";
 
 import Link from "next/link";
 import { navigationMenu } from "@/constant/route";
@@ -17,6 +16,10 @@ const Navbar = () => {
 
 	const handleBurgerMenu = (): void => {
 		setIsOpen((previous) => !previous);
+	};
+
+	const onClose = () => {
+		setIsOpen(false);
 	};
 
 	return (
@@ -50,7 +53,7 @@ const Navbar = () => {
 				{navigationMenu.map((value) => {
 					const active = viewing === value.text;
 					return (
-						<li key={value.url}>
+						<li key={value.url} onClick={onClose}>
 							<Link href={value.url} as={value.url}>
 								<ActiveText
 									isActive={active}
@@ -62,45 +65,6 @@ const Navbar = () => {
 						</li>
 					);
 				})}
-				{/* <li>
-					<Link
-						href="#skills"
-						as="#skills"
-						onClick={() => handleStateNav(NavigationText.Skills)}>
-						<ActiveText
-							isActive={viewing === NavigationText.Skills}
-							leftText="Ski"
-							rightText="lls"
-							textSize="text-sm font-bold"
-						/>
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="#portfolio"
-						as="#portfolio"
-						onClick={() => handleStateNav(NavigationText.Portfolio)}>
-						<ActiveText
-							isActive={viewing === NavigationText.Portfolio}
-							leftText="Port"
-							rightText="folio"
-							textSize="text-sm font-bold"
-						/>
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="#contact"
-						as="#contact"
-						onClick={() => handleStateNav(NavigationText.Contact)}>
-						<ActiveText
-							isActive={viewing === NavigationText.Contact}
-							leftText="Con"
-							rightText="tact"
-							textSize="text-sm font-bold"
-						/>
-					</Link>
-				</li> */}
 			</ul>
 			<a href="/se-cv.pdf" download="se-cv.pdf">
 				<Button text="Download CV" />

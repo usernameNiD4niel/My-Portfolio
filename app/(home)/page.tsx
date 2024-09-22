@@ -14,7 +14,7 @@ const HomePage = () => {
 				alt="Daniel Rey picture"
 				width={150}
 				height={150}
-				className="w-40 h-auto mt-10"
+				className="w-40 h-40 mt-10 drop-shadow-md rounded-full"
 			/>
 			<h3 className="text-2xl font-bold flex text-center mt-5 items-center">
 				Hi, I am

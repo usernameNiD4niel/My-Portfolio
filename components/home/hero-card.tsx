@@ -19,28 +19,6 @@ const HeroCard = () => {
 					<p className="text-sm">{value.label}</p>
 				</div>
 			))}
-
-			{/* <div className="w-full flex gap-4 p-4 rounded-md items-center bg-gradient-to-tr from-[#8A59C3] to-[#32B3FF]">
-				<Image
-					src={"/rimuru.jpg"}
-					alt={"An image of Rimuru Tempest from I got reincarnated as a slime"}
-					width={300}
-					height={300}
-					className="w-auto h-12 rounded-md"
-				/>
-				<p className="text-sm">Rimuru Tempest</p>
-			</div>
-
-			<div className="w-full flex gap-4 p-4 rounded-md items-center bg-gradient-to-tr from-[#5A5C63] to-[#934B4A]">
-				<Image
-					src={"/sakuna.jpg"}
-					alt={"An image of Yuji Itadori from Jujutsu Kaisen"}
-					width={300}
-					height={300}
-					className="w-auto h-12 rounded-md"
-				/>
-				<p className="text-sm">Yuji Itadori</p>
-			</div> */}
 		</div>
 	);
 };

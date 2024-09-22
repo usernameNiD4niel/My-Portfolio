@@ -18,9 +18,9 @@ export const cardText: CardType[] = [
 		alt: "Rimuru tempest image",
 	},
 	{
-		imageUrl: "/kafka.jpg",
-		label: "Kaiju No. 8",
-		alt: "Kafka Hibino",
+		imageUrl: "/sung-jin-woo.webp",
+		label: "Solo Leveling",
+		alt: "Sung Jin Woo",
 	},
 ];
 
