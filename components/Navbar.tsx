@@ -66,7 +66,7 @@ const Navbar = () => {
 					);
 				})}
 			</ul>
-			<a href="/se-cv.pdf" download="se-cv.pdf">
+			<a href="/se-2024.pdf" download="Daniel Rey Resume.pdf">
 				<Button text="Download CV" />
 			</a>
 		</nav>
