@@ -39,6 +39,7 @@ body {
     transform: rotate(45deg);
     transition: transform 300ms ease-in-out;
 }
+
 .animate-burger::before {
     content: "";
     position: absolute;

@@ -1,6 +1,7 @@
 import HeroCard from "@/components/home/hero-card";
 import ActiveText from "@/components/reusable/ActiveText";
 import TabActivator from "@/components/reusable/TabActivator";
+import FunctionPage from "@/constant/functions";
 import { NavigationText } from "@/constant/helper";
 import Image from "next/image";
 import React from "react";
@@ -33,6 +34,8 @@ const HomePage = () => {
 
 			{/* Make the card gradient */}
 			<HeroCard />
+
+			<FunctionPage />
 		</div>
 	);
 };
