@@ -24,32 +24,29 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-opacity duration-300 ease-in-out md:px-32 ${
-				isOpen
-					? "inset-0 flex-col justify-start bg-primary opacity-[0.95]"
-					: "justify-between bg-gradient-to-bl from-[#323435]"
-			}`}>
+			className={`w-full filter px-3 py-4 z-50 fixed top-0 left-0 flex items-center transition-opacity duration-300 ease-in-out md:px-32 ${isOpen
+				? "inset-0 flex-col justify-start bg-primary opacity-[0.95]"
+				: "justify-between bg-gradient-to-bl from-[#323435]"
+				}`}>
 			<div
-				className={`flex items-center cursor-pointer md:hidden ${
-					isOpen ? "absolute top-5 right-2" : "pt-3 pb-5 px-1 justify-center"
-				}`}
+				className={`flex items-center cursor-pointer md:hidden ${isOpen ? "absolute top-5 right-2" : "pt-3 pb-5 px-1 justify-center"
+					}`}
 				onClick={handleBurgerMenu}>
 				<div className={`${isOpen ? "animate-burger" : "burger-menu"}`} />
 			</div>
 			<Link href="/" as="/" className={`${isOpen && "mt-20"} inline-block`}>
 				<Image
-					src="/no_copyright_infrigement.svg"
+					src="/logo.png"
 					alt="This image is a logo image from internet"
 					width={70}
 					height={70}
 					style={{ objectFit: "cover" }}
-					className={`${isOpen ? "w-32" : "w-16"} h-auto`}
+					className={`${isOpen ? "w-32" : "w-10"} h-auto`}
 				/>
 			</Link>
 			<ul
-				className={`gap-4 md:flex ${
-					isOpen ? "flex items-center text-sm flex-col my-8" : "hidden"
-				}`}>
+				className={`gap-4 md:flex ${isOpen ? "flex items-center text-sm flex-col my-8" : "hidden"
+					}`}>
 				{navigationMenu.map((value) => {
 					const active = viewing === value.text;
 					return (
